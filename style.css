@@ -1,0 +1,85 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+:root {
+    --primary: #31E981;
+    --secondary: #FF7700;
+    --shadow: #333745;
+    --white: #F3E8EE;
+    --warning: #E63462;
+}
+
+body {
+    background-color: var(--white);
+    height: 90vmin;
+    width: 90vmin;
+    margin: auto;
+}
+
+table {
+    border-collapse: collapse;
+    margin: auto;
+    height: 80%;
+    width: 80%;
+}
+
+td {
+    font-family: 'Courier New', Courier, monospace;
+    text-align: center;
+    font-weight: bold;
+    font-size: 10vmin;
+    height: 25%;
+    width: 25%;
+}
+
+button:not(.hidden)#start {
+    background-color: var(--primary);
+    box-shadow: 0 10px var(--shadow);
+    justify-content: center;
+    text-decoration: none;
+    align-items: center;
+    border-radius: 5px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 5vmin;
+    cursor: pointer;
+    display: block;
+    color: var(--white);
+    margin: auto;
+    border: none;
+    height: 10%;
+    width: 60%;
+}
+
+button:not(.hidden)#start:hover {
+    background-color: var(--secondary);
+}
+
+button:not(.hidden)#start:active {
+    background-color: var(--secondary);
+    transform: translateY(4px);
+    box-shadow: 0 5px var(--shadow);
+}
+
+progress {
+    display: block;
+    margin: auto;
+    height: 10%;
+    width: 60%;
+}
+
+div#attribution {
+    font-family: 'Courier New', Courier, monospace;
+    text-align: center;
+    font-weight: bold;
+    font-size: 2vmin;
+    color: var(--shadow);
+    display: block;
+    margin: 0 auto 2vmin auto;
+}
+
+.hidden {
+    display: none;
+}

@@ -1,0 +1,87 @@
+<html>
+
+<head>
+    <title>Word Roll</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="js/shuffle.js"></script>
+    <script src="js/music.js"></script>
+    <script src="js/board.js"></script>
+    <script>
+        class Game {
+            constructor() {
+                this.board = new Board();
+                this.music = new Music();
+            }
+
+            start(boardId, progressId, startId) {
+                var progress = document.getElementById(progressId);
+                var board = document.getElementById(boardId);
+                var start = document.getElementById(startId);
+
+                // Set up the new game state.
+                progress.classList.remove("hidden");
+                start.classList.add("hidden");
+                this.board.clear(board);
+                progress.value = 1;
+
+                // Count up the progress bar.
+                var timer = setInterval(function () {
+                    progress.value += 33;
+                    if (progress.value == 100) {
+                        clearInterval(timer);
+
+                        this.board.shuffle(board);
+                        this.music.play((state) => { progress.value = state * 100; }, () => {
+                            progress.classList.add("hidden");
+                            start.classList.remove("hidden");
+                        });
+                    }
+                }.bind(this), 1000);
+            }
+        }
+
+        var game = new Game();
+    </script>
+</head>
+
+<body class="new">
+    <table id="board">
+        <tr>
+            <td>W</td>
+            <td>O</td>
+            <td>R</td>
+            <td>D</td>
+        </tr>
+
+        <tr>
+            <td>*</td>
+            <td>*</td>
+            <td>O</td>
+            <td>*</td>
+        </tr>
+
+        <tr>
+            <td>*</td>
+            <td>*</td>
+            <td>L</td>
+            <td>*</td>
+        </tr>
+
+        <tr>
+            <td>*</td>
+            <td>*</td>
+            <td>L</td>
+            <td>*</td>
+        </tr>
+    </table>
+
+    <div id="attribution">
+        Music by <a href="https://www.crowander.com">Crowander</a> under <a
+            href="https://creativecommons.org/licenses/by-nc-nd/4.0/">CC BY-NC-ND 4.0</a>.
+    </div>
+
+    <button id="start" type="button" onclick="game.start('board', 'progress', 'start');">Start</button>
+    <progress id="progress" class="hidden" value="0" max="100"></progress>
+</body>
+
+</html>
