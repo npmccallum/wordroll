@@ -8,6 +8,10 @@ class Song {
         this.audio.volume = 0.0;
         this.audio.src = file;
 
+        this.audio.addEventListener('error', function () {
+            console.log("error");
+        }, false);
+
         this.audio.addEventListener('playing', function () {
             console.log("playing");
             let fade = setInterval(function () {
