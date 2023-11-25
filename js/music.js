@@ -9,12 +9,12 @@ class Song {
         this.audio.volume = 0.0;
         this.audio.src = file;
 
-        this.audio.addEventListener('error', function () {
-            console.log("error");
+        this.audio.addEventListener('error', function (event) {
+            console.log("error: " + JSON.stringify(event));
         }, false);
 
-        this.audio.addEventListener('playing', function () {
-            console.log("playing");
+        this.audio.addEventListener('playing', function (event) {
+            console.log("playing: " + JSON.stringify(event));
             let fade = setInterval(function () {
                 console.log("fading");
                 let next = this.audio.volume + 0.1;
