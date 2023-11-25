@@ -9,8 +9,56 @@ class Song {
         this.audio.volume = 0.0;
         this.audio.src = file;
 
+        this.audio.addEventListener('abort', function (event) {
+            console.log("abort: " + JSON.stringify(event));
+        }, false);
+
         this.audio.addEventListener('error', function (event) {
             console.log("error: " + JSON.stringify(event));
+        }, false);
+
+        this.audio.addEventListener('ended', function (event) {
+            console.log("ended: " + JSON.stringify(event));
+        }, false);
+
+        this.audio.addEventListener('loadeddata', function (event) {
+            console.log("loadeddata: " + JSON.stringify(event));
+        }, false);
+
+        this.audio.addEventListener('loadedmetadata', function (event) {
+            console.log("loadedmetadata: " + JSON.stringify(event));
+        }, false);
+
+        this.audio.addEventListener('loadstart', function (event) {
+            console.log("loadstart: " + JSON.stringify(event));
+        }, false);
+
+        this.audio.addEventListener('pause', function (event) {
+            console.log("pause: " + JSON.stringify(event));
+        }, false);
+
+        this.audio.addEventListener('play', function (event) {
+            console.log("play: " + JSON.stringify(event));
+        }, false);
+
+        this.audio.addEventListener('progress', function (event) {
+            console.log("progress: " + JSON.stringify(event));
+        }, false);
+
+        this.audio.addEventListener('seeked', function (event) {
+            console.log("seeked: " + JSON.stringify(event));
+        }, false);
+
+        this.audio.addEventListener('seeking', function (event) {
+            console.log("seeking: " + JSON.stringify(event));
+        }, false);
+
+        this.audio.addEventListener('stalled', function (event) {
+            console.log("stalled: " + JSON.stringify(event));
+        }, false);
+
+        this.audio.addEventListener('waiting', function (event) {
+            console.log("waiting: " + JSON.stringify(event));
         }, false);
 
         this.audio.addEventListener('playing', function (event) {
