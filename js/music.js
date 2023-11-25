@@ -5,6 +5,7 @@ class Song {
 
         this.audio = new Audio();
         this.audio.currentTime = this.start;
+        this.audio.preload = true;
         this.audio.volume = 0.0;
         this.audio.src = file;
 
