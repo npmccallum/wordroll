@@ -46,12 +46,14 @@ class Song {
 class Music {
     constructor() {
         this.songs = [
-            new Song("music/Crowander - the Grasshopper.mp3", 194.0),
-            new Song("music/Crowander - Come to an End.mp3", 218.75),
-            new Song("music/Crowander - in Sweden.mp3", 272.0),
-            new Song("music/Crowander - Fairies.mp3", 200.0),
-            new Song("music/Crowander - Still.mp3", 184.0),
-            new Song("music/Crowander - Film.mp3", 274.0),
+            new Song("music/crowander-the.grasshopper.mp3", 194.0),
+            new Song("music/crowander-come.to.an.end.mp3", 218.75),
+            new Song("music/crowander-in.sweden.mp3", 272.0),
+            new Song("music/crowander-fairies.mp3", 200.0),
+            new Song("music/crowander-still.mp3", 184.0),
+            new Song("music/crowander-film.mp3", 274.0),
+
+
         ];
     }
 
